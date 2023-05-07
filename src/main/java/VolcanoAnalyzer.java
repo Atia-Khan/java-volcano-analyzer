@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Arrays;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
@@ -37,6 +38,15 @@ public class VolcanoAnalyzer {
         return volcanos.stream()
             .filter(v -> v.getYear() >= 1980 && v.getYear() <= 1989)
             .collect(Collectors.toList());
+    }
+
+    //Second user Story
+
+    public String[] highVEI(){
+        return volcanos.stream()
+        .filter(v -> v.getVEI() >= 6)
+        .map(Volcano::getName)
+        .toArray(String[]::new);
     }
 
 }
