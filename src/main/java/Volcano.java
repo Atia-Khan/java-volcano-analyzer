@@ -122,4 +122,7 @@ public class Volcano {
             this.DEATHS = DEATHS;
         }
     }
+
+  
+
 }

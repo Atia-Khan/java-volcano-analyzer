@@ -5,9 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
-import java.util.List;
+// import java.util.List;
 import java.util.stream.Collectors;
-import java.util.Arrays;
+// import java.util.Arrays;
 import java.util.Comparator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -50,10 +50,25 @@ public class VolcanoAnalyzer {
         .toArray(String[]::new);
     }
 
+    //Third user Story
+
     public Volcano mostDeadly(){
         return volcanos.stream()
         .max(Comparator.comparingInt(v -> Integer.parseInt(v.getDEATHS())))
         .orElse(null);
     }
 
+    //Fourth user Story
+  public double causedTsunami() {
+long getTsunamiPercentage = volcanos.stream()
+    .filter(v -> !v.getTsu().isEmpty())
+    .count();
+
+return (double) getTsunamiPercentage / volcanos.size() * 100;
+
+// String result = String.format("%.2f%%", tsunamiPercentage);
+
+// return result;
+
+}
 }
