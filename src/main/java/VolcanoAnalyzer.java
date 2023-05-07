@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
+import java.util.function.Function;
 // import java.util.List;
 import java.util.stream.Collectors;
 // import java.util.Arrays;
@@ -65,10 +67,21 @@ long getTsunamiPercentage = volcanos.stream()
     .count();
 
 return (double) getTsunamiPercentage / volcanos.size() * 100;
+  }
 
-// String result = String.format("%.2f%%", tsunamiPercentage);
 
-// return result;
+  //5th user story
 
+
+  public String mostCommonType() {
+    return volcanos.stream()
+            .map(Volcano::getType)
+            .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+            .entrySet()
+            .stream()
+            .max(Map.Entry.comparingByValue())
+            .map(Map.Entry::getKey)
+            .orElse(null);
 }
+
 }
