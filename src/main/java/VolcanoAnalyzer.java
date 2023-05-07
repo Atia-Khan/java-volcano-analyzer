@@ -84,7 +84,7 @@ return (double) getTsunamiPercentage / volcanos.size() * 100;
             .orElse(null);
 }
 
-//5th test case
+//6th test case
 
 
 public int eruptionsByCountry(String country) {
@@ -92,4 +92,15 @@ public int eruptionsByCountry(String country) {
     .filter(v -> country.equals(v.getCountry()))
     .count();
     }
+
+
+    //7th test case
+
+    public double averageElevation() {
+        return volcanos.stream()
+                .mapToDouble(Volcano::getElevation)
+                .average()
+                .orElse(0);
+    }
+    
 }
