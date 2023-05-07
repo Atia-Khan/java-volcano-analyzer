@@ -102,5 +102,16 @@ public int eruptionsByCountry(String country) {
                 .average()
                 .orElse(0);
     }
+
+
+    // 8th test case
+    public String[] volcanoTypes() {
+        return volcanos.stream()
+                .map(Volcano::getType)
+                .distinct()
+                .sorted()
+                .toArray(String[]::new);
+    }
+    
     
 }
