@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.Arrays;
+import java.util.Comparator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
@@ -47,6 +48,12 @@ public class VolcanoAnalyzer {
         .filter(v -> v.getVEI() >= 6)
         .map(Volcano::getName)
         .toArray(String[]::new);
+    }
+
+    public Volcano mostDeadly(){
+        return volcanos.stream()
+        .max(Comparator.comparingInt(v -> Integer.parseInt(v.getDEATHS())))
+        .orElse(null);
     }
 
 }

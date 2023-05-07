@@ -114,6 +114,12 @@ public class Volcano {
     }
 
     public void setDEATHS(String DEATHS) {
-        this.DEATHS = DEATHS;
+
+        //changes done here
+        if (DEATHS == null || DEATHS.isEmpty()) {
+            this.DEATHS = "0";
+        } else {
+            this.DEATHS = DEATHS;
+        }
     }
 }
