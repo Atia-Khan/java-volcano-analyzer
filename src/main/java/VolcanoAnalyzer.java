@@ -84,4 +84,12 @@ return (double) getTsunamiPercentage / volcanos.size() * 100;
             .orElse(null);
 }
 
+//5th test case
+
+
+public int eruptionsByCountry(String country) {
+    return (int) volcanos.stream()
+    .filter(v -> country.equals(v.getCountry()))
+    .count();
+    }
 }
