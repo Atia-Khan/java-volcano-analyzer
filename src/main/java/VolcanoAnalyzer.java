@@ -64,11 +64,14 @@ public class VolcanoAnalyzer {
 
     //Fourth user Story
   public double causedTsunami() {
-long getTsunamiPercentage = volcanos.stream()
-    .filter(v -> !v.getTsu().isEmpty())
-    .count();
+// long getTsunamiPercentage = volcanos.stream()
+//     .filter(v -> !v.getTsu().isEmpty())
+//     .count();
 
-return (double) getTsunamiPercentage / volcanos.size() * 100;
+// return (double) getTsunamiPercentage / volcanos.size() * 100;
+
+double x = volcanos.stream().filter(v->v.getTsu().equals("tsu")).count();
+    return x/volcanos.size() * 100;
   }
 
 
