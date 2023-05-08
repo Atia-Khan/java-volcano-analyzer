@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.function.Function;
 // import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Arrays;
 // import java.util.Arrays;
 import java.util.Comparator;
 
@@ -112,13 +113,15 @@ public int eruptionsByCountry(String country) {
                 .distinct()
                 .toArray(String[]::new);
     }
-    // 7th test case
+    // 9th test case
 
     public double percentNorth() {
       double value =  volcanos.stream().filter(v-> v.getLatitude()> 0 ).count();
        return  value/ volcanos.size()*100;
     }
 
+
+      // 10th test case
     public String[] manyFilters() {
         return  volcanos.stream().filter( v-> v.getYear()>1800 ).
         filter(v-> v.getTsu().equals("")).
@@ -126,11 +129,22 @@ public int eruptionsByCountry(String country) {
         filter(v-> v.getVEI() == 5 ).map(Volcano :: getName).toArray(String []:: new);
         
     }
-
+  // 11th test case
     public String[] elevatedVolcanoes(int i) {
         return  volcanos.stream().filter(v-> v.getElevation() > i).map(Volcano :: getName).toArray(String[]:: new);
     }
 
+    //12th test case
+
+    public String[] topAgentsOfDeath() {
+        return volcanos.stream()
+        .sorted((i,j) -> Integer.parseInt(j.getDEATHS()) - Integer.parseInt(i.getDEATHS()))
+        .limit(10).filter(v -> !v.getAgent().isEmpty())
+        .map(v -> Arrays.asList(v.getAgent().split(","))).flatMap(List::stream)
+        .distinct()
+        .collect(Collectors.toList())
+        .toArray(new String[0]);
+    }
 
 
     
