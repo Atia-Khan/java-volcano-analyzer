@@ -192,54 +192,53 @@ public class VolcanoAnalyzerTests {
     //Teardown
     }
 
-    // @Test
-    // public void percentNorth() {
-    // //Setup
-    // double expected = 64.55;
+    @Test
+    public void percentNorth() {
+    //Setup
+    double expected = 64.55;
 
-    // //Execute
-    // double actual = va.percentNorth();
+    //Execute
+    double actual = va.percentNorth();
 
-    // //Assert
-    // assertEquals( expected, actual, .1, "should be about 64.55 percent");
+    //Assert
+    assertEquals( expected, actual, .1, "should be about 64.55 percent");
 
-    // //Teardown
-    // }
+    //Teardown
+    }
 
-    // @Test
-    // public void manyFilters() {
-    // //Setup
-    // String[] expected = { "Galunggung", "Hudson, Cerro" };
-    // //Execute
-    // String[] actual = va.manyFilters();
+    @Test
+    public void manyFilters() {
+    //Setup
+    String[] expected = { "Galunggung", "Hudson, Cerro" };
+    //Execute
+    String[] actual = va.manyFilters();
 
-    // //Assert
-    // assertEquals( expected.length, actual.length, "should have 3 volcanoes");
-    // assertArrayEquals(expected, actual, "should have the correct volcanoes");
+    //Assert
+    assertEquals( expected.length, actual.length, "should have 3 volcanoes");
+    assertArrayEquals(expected, actual, "should have the correct volcanoes");
 
-    // //Teardown
-    // }
+    //Teardown
+    }
 
-    // @Test
-    // public void elevatedVolcanoes() {
-    // //Setup
-    // String[] expected = { "Tungurahua", "Cotopaxi", "Bona-Churchill",
-    // "Bona-Churchill", "Ruiz", "Tungurahua", "Cotopaxi", "Cotopaxi", "Cotopaxi",
-    // "Cotopaxi", "Sabancaya", "Ararat", "Ruiz", "Cotopaxi", "Tungurahua",
-    // "Tungurahua", "Popocatepetl", "Sangay", "Ruiz", "Sabancaya", "Huila",
-    // "Popocatepetl", "Tungurahua", "Tungurahua", "Tungurahua", "Huila",
-    // "Tungurahua", "Huila", "Tungurahua", "Tungurahua", "Tungurahua", "Ubinas" };
+    @Test
+    public void elevatedVolcanoes() {
+    //Setup
+    String[] expected = { "Tungurahua", "Cotopaxi", "Bona-Churchill",
+    "Bona-Churchill", "Ruiz", "Tungurahua", "Cotopaxi", "Cotopaxi", "Cotopaxi",
+    "Cotopaxi", "Sabancaya", "Ararat", "Ruiz", "Cotopaxi", "Tungurahua",
+    "Tungurahua", "Popocatepetl", "Sangay", "Ruiz", "Sabancaya", "Huila",
+    "Popocatepetl", "Tungurahua", "Tungurahua", "Tungurahua", "Huila",
+    "Tungurahua", "Huila", "Tungurahua", "Tungurahua", "Tungurahua", "Ubinas" };
 
-    // //Execute
-    // String[] actual = va.elevatedVolcanoes(4990);
+    //Execute
+    String[] actual = va.elevatedVolcanoes(4990);
 
-    // //Assert
-    // assertEquals( expected.length, actual.length, "should have 32 volcanoes above
-    // 4990");
-    // assertArrayEquals(expected, actual, "should have the correct volcanoes");
+    //Assert
+    assertEquals( expected.length, actual.length, "should have 32 volcanoes above4990");
+    assertArrayEquals(expected, actual, "should have the correct volcanoes");
 
-    // //Teardown
-    // }
+    //Teardown
+    }
 
     // @Test
     // public void topAgentsOfDeath() {

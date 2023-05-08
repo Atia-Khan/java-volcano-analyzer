@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 import java.util.Comparator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ValueNode;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 
 public class VolcanoAnalyzer {
@@ -111,6 +112,27 @@ public int eruptionsByCountry(String country) {
                 .distinct()
                 .toArray(String[]::new);
     }
+    // 7th test case
+
+    public double percentNorth() {
+      double value =  volcanos.stream().filter(v-> v.getLatitude()> 0 ).count();
+       return  value/ volcanos.size()*100;
+    }
+
+    public String[] manyFilters() {
+        return  volcanos.stream().filter( v-> v.getYear()>1800 ).
+        filter(v-> v.getTsu().equals("")).
+        filter(v-> v.getLatitude()<0).
+        filter(v-> v.getVEI() == 5 ).map(Volcano :: getName).toArray(String []:: new);
+        
+    }
+
+    public String[] elevatedVolcanoes(int i) {
+        return  volcanos.stream().filter(v-> v.getElevation() > i).map(Volcano :: getName).toArray(String[]:: new);
+    }
+
+
+
     
     
 }
