@@ -109,7 +109,6 @@ public int eruptionsByCountry(String country) {
         return volcanos.stream()
                 .map(Volcano::getType)
                 .distinct()
-                .sorted()
                 .toArray(String[]::new);
     }
     
